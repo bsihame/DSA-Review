@@ -40,4 +40,26 @@ const duplicate = arr => {
   return [...output]
 }
 console.log(duplicate([2, 2, 2, 1, 4]));
-console.log(duplicate([2, 2, 2, 1, 4,4,4,0,0,3]));
+console.log(duplicate([2, 2, 2, 1, 4, 4, 4, 0, 0, 3]));
+
+
+
+// [4,5,2,3] [4, 5, 6] => [4, 5]
+// arr1.forEach(el)==> el[0]
+// arr2
+// any order
+// empty arrays possible => return []
+const bothArrays = (arr1, arr2) => {
+  let dup1 = new Set();
+  let output = new Set();
+  arr1.forEach((el) => {
+    dup1.add(el) // O(1) 
+  })
+  arr2.forEach((el) => { // O(N)
+    if(dup1.has(el)) {  // O(1) 
+      output.add(el) //O(1)
+    }
+  })
+  return [...output]
+}
+console.log(bothArrays([4,5,2,3], [4, 5, 6]))
