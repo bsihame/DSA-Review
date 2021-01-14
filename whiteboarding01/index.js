@@ -45,8 +45,6 @@ console.log(duplicate([2, 2, 2, 1, 4, 4, 4, 0, 0, 3]));
 
 
 // [4,5,2,3] [4, 5, 6] => [4, 5]
-// arr1.forEach(el)==> el[0]
-// arr2
 // any order
 // empty arrays possible => return []
 const bothArrays = (arr1, arr2) => {
