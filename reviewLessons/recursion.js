@@ -28,6 +28,25 @@ const factorial = (n) => {
 console.log(factorial(5));
 
 console.log("==========================================================");
-console.log("Factorial");
+console.log("Fibonacci")
 
+const fibonacci = (n) =>{
+  let arr =[]
+  if(n < 2) {
+    return n
+  } 
+     return fibonacci(n-2) + fibonacci(n-1)
+ 
+}
+console.log(fibonacci(7));
+
+
+const fib = (n) => {
+  let arr = [0, 1];
+  for (let i = 2; i < n + 1; i++){
+    arr.push(arr[i - 2] + arr[i -1]);
+  }
+  return arr[n]
+}
+console.log(fib(7));
 
