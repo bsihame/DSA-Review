@@ -21,4 +21,12 @@
         
         => Linked List structure 
         Compose of the nodes that contain a stored value and a reference to the next node.
+        => Linked List list  variant
+        Single Linked List that has one pointer to next
+        -> a -> b -> c -> d ->
+        Double Linked List that has 2 pointers next and preview
+        -> a <==> b <==> c <==> d ->
+        Dummy head Linked List
+        A linked List where you have a place holder even you have an empty linked list the node that you have in the dummy head linked list it is like a fake node and you don't have to handle any edge cases
+        -> head -> a -> b -> c -> d ->
 */
