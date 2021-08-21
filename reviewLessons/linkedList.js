@@ -30,3 +30,62 @@
         A linked List where you have a place holder even you have an empty linked list the node that you have in the dummy head linked list it is like a fake node and you don't have to handle any edge cases
         -> head -> a -> b -> c -> d ->
 */
+console.log("Single Linked List")
+
+// create a node class
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+// create the main of the Linked List an empty Linked List
+class LinkedList {
+  constructor() {
+    this.head = null
+  }
+
+  append(val) {
+    // check if the head is null
+    if(this.head === null){
+      this.head = new Node(val)
+      return;
+    }
+    // pointer
+    let curr = this.head;
+    while(curr.next !== null){
+      curr = curr.next
+    }
+    // current is the tail
+    curr.next = new Node(val)
+  }
+
+  print() {
+    //  start with pointer
+    let str = "";
+    let curr = this.head;
+    while(curr !== null){
+      str += curr.val + "->";
+      curr = curr.next;
+    }
+    console.log(str);
+  }
+
+}
+
+
+//  add a node in the Linked List is to add a new node to the end of the Linked List always add a tail to the list
+//  create an instance on linked List
+const list = new LinkedList();
+list.append("a");
+list.append("b");
+list.append("c");
+list.append("d");
+list.print();
+// -> a -> b -> c -> d ->
+// console.log(list.head)
+// ==> Node {
+//   val: 'a',
+//   next: Node { val: 'b', next: Node { val: 'c', next: [Node] } }
+// }
