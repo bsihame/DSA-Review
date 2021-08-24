@@ -75,14 +75,13 @@ class LinkedList {
   contains(target) {
     let curr = this.head;
     while (curr !== null) {
-      if (curr.val === target){
+      if (curr.val === target) {
         return true;
       }
       curr = curr.next;
     }
 
-
-    return false
+    return false;
   }
 }
 
@@ -106,9 +105,9 @@ list.print();
 // }
 
 // contains method
-console.log(list.contains("a")) //true
-console.log(list.contains("b")) //true
-console.log(list.contains("c")) //true
-console.log(list.contains("d")) //true
-console.log(list.contains("x")) //false
-console.log(list.contains("z")) //false
+console.log(list.contains("a")); //true
+console.log(list.contains("b")); //true
+console.log(list.contains("c")); //true
+console.log(list.contains("d")); //true
+console.log(list.contains("x")); //false
+console.log(list.contains("z")); //false
