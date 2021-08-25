@@ -1,6 +1,9 @@
 /**
  * ->
  * -> a ->
+ * -> a -> b ->
+ * -> a -> b -> c ->
+ * -> a -> b -> c -> d ->
  */
 
 //  we create node
@@ -25,14 +28,14 @@ class LinkedListRecursive {
     if(this.head === null){
       // add the new node
       this.head = new Node(val)
-      //we should return here to not have a double of the first node
-   
-    // ==> Node {
-    //   val: 'a',
-    //   next: Node { val: 'a', next: Node { val: 'b', next: [Node] } }
-    // }
-
       return;
+          //we should return here to not have a double of the first node
+   
+          // ==> Node {
+            //   val: 'a',
+            //   next: Node { val: 'a', next: Node { val: 'b', next: [Node] } }
+          // }
+
     }
     this._append(val, this.head)
   }
@@ -71,8 +74,6 @@ class LinkedListRecursive {
     if(curr.val === target) return true;
     return this._contains(target, curr.next);
   }
-
-
 }
 
 const list = new LinkedListRecursive();
