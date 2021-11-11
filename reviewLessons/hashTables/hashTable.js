@@ -82,7 +82,7 @@
 // //   "Faris", "Respect"
 // // }
 // console.log(confusion)
-console.log('Create Map using set method');
+// console.log('Create Map using set method');
 
 const fruits = new Map()// fruits{}
 
@@ -93,13 +93,13 @@ fruits.set("Weight", "1lb")
 fruits.set(200, "Pickles")
 fruits.set(true, "Burgers")
 fruits.set(false, "Buns")
-console.log(fruits.get("name"))
-console.log(fruits)
-console.log("size in the map", fruits.size)
-console.log(fruits.has("Color"))
-console.log(fruits.has(300))
-console.log(fruits.delete(false))
-console.log(fruits)
+// console.log(fruits.get("name"))
+// console.log(fruits)
+// console.log("size in the map", fruits.size)
+// console.log(fruits.has("Color"))
+// console.log(fruits.has(300))
+// console.log(fruits.delete(false))
+// console.log(fruits)
 // console.log(fruits.clear())
 // console.log(fruits);
 
@@ -113,12 +113,56 @@ const ageMap = new Map([
 //   console.log(`${key} is ${value} years old!`)
 // })
 
-for(let [key,value] of ageMap) {
-  console.log(`${key} is ${value} years old!`)
-}
+// for(let [key,value] of ageMap) {
+//   console.log(`${key} is ${value} years old!`)
+// }
 // console.log(ageMap.keys());
 // console.log(ageMap.values());
 // console.log(ageMap.entries())
+
+// ageMap.forEach((value, key)=>{
+//   // console.log(123, value)
+//   if(value >= 18){
+//     console.log(key)
+//     // return key
+//     // console.log("hello")
+//   }
+// })
+// ageMap.forEach((value, key)=> {
+//   if(value< 20){
+//     console.log( `You are minor ${key}`)
+//   }
+// })
+
+// for( let [key, value] of ageMap){
+//   if(value <20) {
+//     console.log( `You are minor ${key}`)
+//   }
+// }
+for( let [key, value] of ageMap){
+    if(value <20) {
+      console.log( `You are minor ${key}`)
+    }
+  }
+
+  console.log("change object into map")
+
+  const address = {
+    'Tapas': 'Bangalore',
+    'James': 'Huston',
+    'Selva': 'Srilanka'
+  };
+  let travel = new Map(Object.entries(address))//{}
+  console.log(travel)
+  console.log("convert map into object")
+  let changeToOBj = Object.fromEntries(travel);
+  console.log(changeToOBj)
+  console.log("convert has into array")
+  let array = Array.from(travel);
+  console.log(array)
+  // change object to array
+  let array2 = Object.entries(address)
+  console.log(array2)
 
 
 
