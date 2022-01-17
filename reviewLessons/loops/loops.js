@@ -53,7 +53,31 @@ const subtractElmInArrByTwo = (arr5) => {
   }
   return arr5
 }
-console.log(subtractElmInArrByTwo([1, 2, 100, 4]))
+console.log(subtractElmInArrByTwo([1, 2, 100, 4]));
+
+console.log("6. using break and continue in for loop");
+
+const subtractElmInArrAndUseBreak = (arr) => {
+  for (let i = 0; i < arr.length; i ++) {
+    if (arr[i] === 100) break;
+    arr[i]--;
+  }
+  return arr
+}
+console.log(subtractElmInArrAndUseBreak([1, 2, 100, 4])) //[ 0, 1, 100, 4 ]
+
+const subtractElmInArrAndUseContinue = (arr) => {
+  for (let i = 0; i < arr.length; i ++) {
+    if (arr[i] === 100) continue;
+    arr[i]--;
+  }
+  return arr
+}
+console.log(subtractElmInArrAndUseContinue([1, 2, 100, 4])) //[ 0, 1, 100, 3]
+
+
+
+
 
 
 
