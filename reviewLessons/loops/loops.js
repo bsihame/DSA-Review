@@ -2,7 +2,7 @@ console.log("1. Create array that contains num from 0 to 10")
 
 const createNumArr = () => {
   var arr= [];
-  for(let i = 0; i <= 10; i++) {
+  for (let i = 0; i <= 10; i++) {
     arr.push(i)
   }
   return arr
@@ -13,7 +13,7 @@ console.log("2. Create array that contains a range of number form 1 to 9 descend
 
 const createNumArrDescending = () => {
   var arr2 = [];
-  for(let i = 9; i > 0; i--) {
+  for (let i = 9; i > 0; i--) {
     arr2.push(i)
   }
   return arr2
@@ -24,7 +24,7 @@ console.log("3. Create array that contains a range of number form 1 to 9 increas
 
 const arrIncreasingByTwo = () => {
   var arr3 = [];
-  for(let i = 1;i < 10;  i = i + 2) {
+  for (let i = 1;i < 10;  i = i + 2) {
     arr3.push(i)
   }
   return arr3
@@ -41,7 +41,20 @@ const usingWhileLoop = () => {
   }
   return arr4
 }
-console.log(usingWhileLoop())
+console.log(usingWhileLoop());
+
+console.log("5. Looping through an array")
+console.log("take an array and subtract each number by 2")
+
+const subtractElmInArrByTwo = (arr5) => {
+  for (let i = 0; i < arr5.length; i ++) {
+    arr5[i] = arr5[i] -2
+    
+  }
+  return arr5
+}
+console.log(subtractElmInArrByTwo([1, 2, 100, 4]))
+
 
 
 
