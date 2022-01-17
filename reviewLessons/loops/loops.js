@@ -29,7 +29,20 @@ const arrIncreasingByTwo = () => {
   }
   return arr3
 }
-console.log(arrIncreasingByTwo())
+console.log(arrIncreasingByTwo());
+
+console.log("4. Using while loop when you don't know how long you are looping")
+const usingWhileLoop = () => {
+  var counter = 0;
+  var arr4 = [];
+  while (counter <= 10) {
+    arr4.push(counter);
+    counter++;
+  }
+  return arr4
+}
+console.log(usingWhileLoop())
+
 
 
 
