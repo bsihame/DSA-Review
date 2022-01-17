@@ -75,7 +75,18 @@ const subtractElmInArrAndUseContinue = (arr) => {
 }
 console.log(subtractElmInArrAndUseContinue([1, 2, 100, 4])) //[ 0, 1, 100, 3]
 
+console.log("7. loop in string");
 
+const letterCapitalize = str => {
+  var words = str.split(" ");
+
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].substr(0, 1).toUpperCase() + words[i].substr(1)
+  }
+  return words.join(" ")
+}
+
+console.log(letterCapitalize("i ran there"))
 
 
 
