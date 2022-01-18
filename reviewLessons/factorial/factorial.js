@@ -192,13 +192,162 @@ const factorial = (num) => {
 }
 
 
-console.log(factorial(0))
-console.log(factorial(1))
-console.log(factorial(2))
-console.log(factorial(3))
-console.log(factorial(5));
+// console.log(factorial(0))
+// console.log(factorial(1))
+// console.log(factorial(2))
+// console.log(factorial(3))
+// console.log(factorial(5));
 
 
 
 
+
+
+
+
+// https://onecompiler.com/javascript/3vyb3ub62
+
+// function inventoryList () {
+//   let arr = []
+ 
+
+//   function add(name) {
+//     if (arr.indexOf(name)=== -1) {
+//       arr.push(name);
+//     }
+//   }
+  
+//   function remove(name) {
+//     let i = arr.indexOf(name)
+//     if(!i){
+//       arr.splice(i, 1)
+//     }
+//   }
+  
+//   function getList() {
+//     return arr
+//   }
+
+//   return { add, remove, getList}
+  
+// }
+// let list = inventoryList()
+// list.add("pats")
+// list.add("skirt")
+// list.add("short")
+
+// console.log(1, list.getList())
+// list.remove("skirt")
+// console.log(list.getList());
+
+
+function inventoryList() {
+  let arr = [];
+
+  function add(name) {
+    if(arr.indexOf(name)=== -1) {
+      arr.push(name)
+    }
+  };
+
+  function remove(name) {
+    let i = arr.indexOf(name);
+    if(i){
+      arr.splice(i, 1);
+    }
+  }
+
+  function getList() {
+    return arr
+  }
+  return {add, remove, getList}
+};
+
+let list = inventoryList();
+list.add("pants");
+list.add("skirts");
+list.add("shorts")
+console.log(list.getList())
+list.remove("skirts")
+console.log(list.getList());
+
+
+//
+          // 2   3
+//input [ "R  C", " 3  7"..]
+// output = number of occurrences that show matrix
+
+
+// let count = 0;
+// let occurrences= 0
+//  R =>[] //arr.length = 2
+//  C ==>[]// arr.length = 3
+// loop [1,1][1,1,1]
+//       [2,2, 1][2,2, 2, 1, 1,1, 1]
+
+function minOccurrences(arr) {
+  let min = Infinity;
+ 
+}
+
+// function getFirstNumberOfStr (arr){
+//    let arrRow = [];
+//    let minValueRow;
+//   for(let i=0; i < arr.length; i++){
+//     // "2 3"==> split str
+//     let row = parseInt(arr[i].split(" ")[0])
+//     let column = arr[i].split(" ")[1]
+//     // console.log(column)
+//     console.log(typeof row)
+//     // let minRowVisited = Math.min(...row.toN)
+//     // console.log(minRowVisited)
+    
+//   }
+
+// }
+// console.log(getFirstNumberOfStr(["2 3", "3 7", "4 1"]))
+// 2*1 = 2
+// ['2 2', '3 4', '2 2'] 2 * 2 = 4
+// ['2 3', '3 4', '2 3'] 2 * 3 = 6
+
+// function countX(arr){
+//   let splittedArr = arr[0].split(" ");// ["5", "3"]
+//   let startRow = parseInt(splittedArr[0]);// 5
+//   let startColumn  = parseInt(splittedArr[1]);// 3
+//       for(let i = 1; i < arr.length; i++){
+//           splittedArr = arr[i].split(" ");
+//           let rowCurrentVa = parseInt(splittedArr[0]);
+//           let columnCurrentVal = parseInt(splittedArr[1]);
+//           if(rowCurrentVa < startRow){
+//               startRow = rowCurrentVa;
+//           }
+//           if(columnCurrentVal < startColumn){
+//               startColumn = columnCurrentVal;
+//           }
+//       }
+ 
+//   return startRow * startColumn;
+
+// }
+
+const countMax =(upRight)=> {
+  let splitUpRight = upRight[0].split(" ") //[5,3]
+  let startRow = parseInt(splitUpRight[0]); //5
+  let startColumn = parseInt(splitUpRight[1]);// 3
+  for( let i = 1; i < upRight.length ; i++ ){
+    splitUpRight = upRight[i].split(" ");
+    let currentRowVal = parseInt(splitUpRight[0]);
+    let currentColumnVal = parseInt(splitUpRight[1]);
+    if (startRow > currentRowVal) {
+      startRow = currentRowVal;
+    }
+    if (startColumn > currentColumnVal) {
+      startColumn = currentColumnVal
+    }
+  }
+ return startRow * startColumn
+}
+console.log(countMax([ "5 3", "3 7", "4 1"]));
+console.log(countMax([ "2 3", "3 4", "4 3"]));
+console.log(countMax([ "5 3", "3 7", "4 1"]));
 
