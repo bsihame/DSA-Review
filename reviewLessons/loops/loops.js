@@ -88,6 +88,18 @@ const letterCapitalize = str => {
 
 console.log(letterCapitalize("i ran there"))
 
+const loopInStr = (str) => {
+  
+  let convertStrToArr = str.split("");
+  for (let i = 0; i < convertStrToArr.length; i++) {
+    if (convertStrToArr[i] === convertStrToArr[i].toUpperCase()) {
+      convertStrToArr[i] = convertStrToArr[i].toLowerCase()
+    }
+  }
+ return convertStrToArr.join(" ")
+}
+console.log(loopInStr("Hello World"))
+
 
 
 
