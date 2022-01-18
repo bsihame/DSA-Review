@@ -148,21 +148,69 @@ for( let [key, value] of ageMap){
   console.log("change object into map")
 
   const address = {
+    1: "hello",
+    true: "hi",
     'Tapas': 'Bangalore',
     'James': 'Huston',
     'Selva': 'Srilanka'
   };
+  // console.log(155, address)
+  console.log(158, Object.entries(address))
   let travel = new Map(Object.entries(address))//{}
-  console.log(travel)
-  console.log("convert map into object")
-  let changeToOBj = Object.fromEntries(travel);
-  console.log(changeToOBj)
-  console.log("convert has into array")
-  let array = Array.from(travel);
-  console.log(array)
-  // change object to array
-  let array2 = Object.entries(address)
-  console.log(array2)
+  // console.log(156, travel)
+  console.log("ask question")
+  // travel.forEach((value, keys)=> {
+  //   if(typeof keys === "1") {
+  //     value = Number(keys)
+  //     console.log(keys + ": " +typeof keys)
+  //   } else {
+  //     console.log(keys + ": " +typeof keys)
+  //   }
+  // })
+  // console.log("convert map into object")
+  // let changeToOBj = Object.fromEntries(travel);
+  // console.log(changeToOBj)
+  // console.log("convert has into array")
+  // let array = Array.from(travel);
+  // console.log(array)
+  // // change object to array
+  // let array2 = Object.entries(address)
+  // console.log(array2)
+
+  console.log("set");
+  let fruitsSet = new Set(["🍉", "🍎", "🍐", "🍏"]);
+  console.log(fruitsSet);
+  console.log(fruitsSet.size)// 4
+  //add more fruits in our basket
+
+  fruitsSet.add("🍅");
+  fruitsSet.add("🍌");
+  fruitsSet.add("🍇");
+  fruitsSet.add("🥑");
+  console.log(fruitsSet)
+  console.log(fruitsSet.size)// 8
+  console.log("check the element if exist in the set");
+  console.log(fruitsSet.has("carrot"));
+  console.log(fruitsSet.has("🍌"));
+  fruitsSet.delete("🍅")
+  console.log(fruitsSet)
+  console.log(fruitsSet.size)
+  // fruitsSet.clear()
+  console.log(fruitsSet)
+  console.log(200, fruitsSet.values());
+  console.log(201, fruitsSet.keys())
+  console.log(202, fruitsSet.entries());
+  fruitsSet.forEach((value)=> {
+    console.log(204, value)
+  });
+  for(let value of fruitsSet) {
+    console.log(207, value)
+  };
+  
+  let changeSetToArray = [...fruitsSet]
+  console.log(changeSetToArray)
+
+
 
 
 
