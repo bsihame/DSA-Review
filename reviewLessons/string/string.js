@@ -38,3 +38,10 @@ const removeDuplicateWords = s => {
   const set = new Set(s.split(' '));
   return Array.from(set).join(' ');
 }
+const removeDuplicates = (str) => {
+  let obj = new Set(str.split(" ")); // Set { 'alpha', 'beta', 'gamma', 'delta' }
+  let array = Array.from(obj) // [ 'alpha', 'beta', 'gamma', 'delta' ]
+  let changeArrayToString = array.join(" "); // alpha beta gamma delta
+ return changeArrayToString
+}
+console.log(removeDuplicates('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'))
