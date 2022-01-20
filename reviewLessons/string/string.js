@@ -21,3 +21,20 @@ const palindrome = (str) => {
 
 console.log(palindrome("Madam I'm Adam"))
 
+/*Your task is to remove all duplicate words from a string, leaving only single (first) words entries.
+
+Example:
+
+Input:
+
+'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+
+Output:
+
+'alpha beta gamma delta'
+*/
+
+const removeDuplicateWords = s => {
+  const set = new Set(s.split(' '));
+  return Array.from(set).join(' ');
+}
