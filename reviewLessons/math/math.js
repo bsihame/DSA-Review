@@ -37,4 +37,14 @@ console.log(randomNum); // 0.1158992010818436
 
 console.log("trig")
 
+let t = Math.tan(10);
+console.log(t) // 0.6483608274590866
+
+console.log("square roo of a number");
+
+let s = Math.sqrt(100)
+console.log(s); // 10
+
+console.log("Modulo")
+
 
