@@ -45,6 +45,13 @@ console.log("square roo of a number");
 let s = Math.sqrt(100)
 console.log(s); // 10
 
-console.log("Modulo")
+console.log("Modulo Operation")
+
+// time convert a minutes to hour and minutes
 
 
+let time = 126;
+let hours = Math.floor(time / 60);
+let minutes = time % 60
+let convertedHours = hours + ":" + minutes +  " H"
+console.log(convertedHours)
