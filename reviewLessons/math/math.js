@@ -55,3 +55,16 @@ let hours = Math.floor(time / 60);
 let minutes = time % 60
 let convertedHours = hours + ":" + minutes +  " H"
 console.log(convertedHours)
+
+console.log("Odd number and Even number using Modulo");
+let num = 105;
+
+const isEven = num => {
+  if(num % 2 > 0) {
+    return "false"
+  }else {
+    return "true"
+  }
+};
+
+console.log(isEven(10))
