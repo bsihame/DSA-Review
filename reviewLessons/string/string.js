@@ -83,15 +83,26 @@ console.log("Valid Spacing: https:\//\www.codewars.com\/\kata\/\5f77d62851f6bc00
 // }
 
 
-const validSpacing = (s) => {
-  const newSentence = s.replace(/\s{2,}/g, " ").trim();
-      if (s === newSentence) {
-          return true
-      } else {
-          return false
-      }
-    }
+// const validSpacing = (s) => {
+//   const newSentence = s.replace(/\s{2,}/g, " ").trim();
+//       if (s === newSentence) {
+//           return true
+//       } else {
+//           return false
+//       }
+//     };
 
+// function validSpacing(s) {
+//   for (var i = 0; i < s.length; i++) {
+//     if (s[i] === " " && s[i + 1] === " ") return false;
+//     if (s[i] === " ") {
+//       if (i === 0 || i === s.length - 1) return false
+//     }
+//   } return true
+// };
 
+function validSpacing(s) {
+  return s==s.split(" ").filter(i=>!i==" ").join(" ");
+}
 
-  console.log(validSpacing('Hello world' ))
+console.log(validSpacing('Hello world' ))
