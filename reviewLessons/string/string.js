@@ -178,6 +178,17 @@
 // }
 // console.log(alphabetWar("zdqmwpbs"));
 
+console.log("==================================================================================")
+// https://www.w3resource.com/javascript-exercises/javascript-string-exercises.php#EDITOR
+
+// 1. Write a JavaScript function to check whether an `input` is a string or not. Go to the editor
+// Test Data :
+// console.log(is_string('w3resource'));
+// true
+// console.log(is_string([1, 2, 4, 0]));
+// false
+
+
 const  is_string = (s) => {
   if(typeof(s) === "string") {
     return true
@@ -200,6 +211,13 @@ const check =(input)=> {
 // console.log(check('w3resource'));
 
 // console.log(check([1, 2, 4, 0]));
+
+// 2. Write a JavaScript function to check whether a string is blank or not. Go to the editor
+// Test Data :
+// console.log(is_Blank(''));
+// console.log(is_Blank('abc'));
+// true
+// false
 
 // const is_Blank = (input) => {
 //   if( input.length === 0)return true;
