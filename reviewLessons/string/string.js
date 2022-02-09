@@ -190,18 +190,30 @@
 
 
 
+// function LongestWord(sen) { 
+
+//   sen = sen.replace(/[^a-zA-Z0-9 ]/g, "")
+//   let arr = sen.split(" ")
+//   let max = ""
+//   for (let i =0; i < arr.length; i++) {
+//     if (arr[i].length > max.length) {
+//       max = arr[i]
+//     }
+//   }
+//     return max;
+// }
+
 function LongestWord(sen) { 
 
-  sen = sen.replace(/[^a-zA-Z ]/g, "")
+  sen = sen.replace(/[^a-zA-Z0-9]/g, "")
   let arr = sen.split(" ")
-  let max = ""
-  for (let i =0; i < arr.length; i++) {
-    if (arr[i].length > max.length) {
-      max = arr[i]
-    }
-  }
-    return max;
+  let sorted = arr.sort((a, b)=> {
+    return b.length - a.length
+  })
+    return sorted[0];
 }
+   
+
    
 // keep this function call here 
 console.log(LongestWord("fun&!! time"));
@@ -309,6 +321,40 @@ const abbrev_name = (input) => {
 
 }
 console.log(abbrev_name("Robin Singh"));
+
+// 6. Write a JavaScript function to hide email addresses to protect from unauthorized user. Go to the editor
+// Test Data :
+// console.log(protect_email("robin_singh@example.com"));
+// "robin...@example.com"
+
+protect_email = function (user_email) {
+  var avg, splitted, part1, part2;
+  splitted = user_email.split("@");
+  // splitted = ["robin_singh", "example.com"]
+  //splitted[0] = "robin_singh";
+  //splitted[2] = "example.com";
+  
+  part1 = splitted[0];
+  //part1 = "robin_singh"
+ 
+  avg = part1.length / 2;
+  //part1.length =11
+  //avg = 10/2 =>5.5
+  
+  part1 = part1.substring(0, (part1.length - avg));
+ 
+  //part1 = part1.substring(10 -5)==>  "robin"
+  part2 = splitted[1];
+ 
+  //part2 = "example.com"
+  return part1 + "...@" + part2;
+  // "robin + "...@"+ "example.com" =>  "robin...@example.com"
+};
+//input "robin_singh@example.com"
+//output robin...@example.com
+
+console.log(protect_email("robin_singh@example.com"));
+
 
   
     
