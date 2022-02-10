@@ -360,11 +360,16 @@ console.log(protect_email("robin_singh@example.com"));
 // console.log(string_parameterize("Robin Singh from USA."));
 // "robin-singh-from-usa"
 
-const string_parameterize = (string) => {
-  const removeSpecialChar = string.replace(/[^a-zA-Z]/g, "-");
-  console.log(365, removeSpecialChar)
-  const strToLowerCase =removeSpecialChar.substring(0, removeSpecialChar.length-1).toLowerCase()
-  console.log(strToLowerCase)
+// const string_parameterize = (string) => {
+//   const removeSpecialChar = string.replace(/[^a-zA-Z0-9]/g, "-");
+//   console.log(365, removeSpecialChar)
+//   const strToLowerCase =removeSpecialChar.substring(0, removeSpecialChar.length-1).toLowerCase()
+//   console.log(strToLowerCase)
+// }
+// console.log(string_parameterize("Robin Singh from USA."));
+
+string_parameterize = function (str1) {
+  return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-") 
 }
 console.log(string_parameterize("Robin Singh from USA."));
 
