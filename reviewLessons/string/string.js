@@ -355,6 +355,18 @@ protect_email = function (user_email) {
 
 console.log(protect_email("robin_singh@example.com"));
 
+// 7. Write a JavaScript function to parameterize a string. Go to the editor
+// Test Data :
+// console.log(string_parameterize("Robin Singh from USA."));
+// "robin-singh-from-usa"
+
+const string_parameterize = (string) => {
+  const removeSpecialChar = string.replace(/[^a-zA-Z]/g, "-");
+  console.log(365, removeSpecialChar)
+  const strToLowerCase =removeSpecialChar.substring(0, removeSpecialChar.length-1).toLowerCase()
+  console.log(strToLowerCase)
+}
+console.log(string_parameterize("Robin Singh from USA."));
 
   
     
