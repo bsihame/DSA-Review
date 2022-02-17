@@ -373,5 +373,37 @@ string_parameterize = function (str1) {
 }
 console.log(string_parameterize("Robin Singh from USA."));
 
-  
-    
+// 8. Write a JavaScript function to capitalize the first letter of a string. Go to the editor
+// Test Data :
+// console.log(capitalize('js string exercises'));
+// "Js string exercises"
+
+// const capitalize = (str) => {
+//  return str.slice(0, 1).toUpperCase() + str.slice(1)
+// }
+// console.log(capitalize('js string exercises'));
+
+const capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+// console.log(capitalize('js string exercises'));
+
+// 9. Write a JavaScript function to capitalize the first letter of each word in a string. Go to the editor
+// Test Data :
+// console.log(capitalize_Words('js string exercises'));
+// "Js String Exercises"
+
+const capitalize_Words = (str) => {//str = "js string exercises"
+  let arr = str.split(' ');// ["js", "string", "exercises"]
+  let newArr = [];
+  for(let i=0; i<arr.length; i++) {
+    newArr.push(firstUpperCase(arr[i]))//"js" => firstUpperCase =(js)=> Js// push newArr = ["Js"]=> i++"string",=>String
+  }
+  //["Js", "String", "Exercises"]
+  return newArr.join(" ")// " "
+} 
+
+const firstUpperCase =(str) => {// "js" "string",
+  return str.charAt(0).toUpperCase() + str.slice(1) // Js =>"String"=>"Exercises"
+}
+console.log(capitalize_Words('js string exercises'))
