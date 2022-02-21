@@ -407,3 +407,41 @@ const firstUpperCase =(str) => {// "js" "string",
   return str.charAt(0).toUpperCase() + str.slice(1) // Js =>"String"=>"Exercises"
 }
 console.log(capitalize_Words('js string exercises'))
+
+
+//Write a JavaScript function that takes a string which has lower and upper case letters as a parameter and converts upper case letters to lower case, and lower case letters to upper case. Go to the editor
+// Test Data :
+// console.log(swapcase('AaBbc'));
+// "aAbBC"
+
+const swapcase = (str) => {
+  let newArr = []
+  let arr = str.split('') // ["A", "a", "B","b", "c"]
+  for ( let i =  0; i < arr.length; i++) {//O(n)
+    if(arr[i] === arr[i].toLowerCase() ){//0(1)
+      newArr.push(arr[i].toUpperCase())///0(1)
+    } else {
+      newArr.push(arr[i].toLowerCase())///0(1)
+    }
+  }
+  return newArr.join("")//O(n)
+}
+console.log(swapcase('AaBbc'));
+
+const swapcase1 = (str) => {
+  let newStr = ""
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toLowerCase()) {
+      newStr += str[i].toUpperCase();
+    } else if(str[i] === str[i].toUpperCase()) {
+      newStr +=  str[i].toLowerCase();
+  }
+}
+  return newStr 
+}
+
+console.log(swapcase1('AaBbc'));
+
+
+
+//=====================================================================================
