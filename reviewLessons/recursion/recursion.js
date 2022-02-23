@@ -7,6 +7,17 @@ const countDownToZero = (num) => {
 };
 console.log(countDownToZero(9));
 console.log("==========================================================");
+console.log("COUNT UP TO TEN")
+
+const countTen = (num = 1) => {
+  if (num > 10) return;
+  console.log(num);
+  num++;
+  countTen(num)
+}
+console.log(countTen())
+
+console.log("==========================================================");
 
 console.log("COUNT UP");
 
