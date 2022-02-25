@@ -27,6 +27,53 @@ const mostOccurredLetter = (str) => {
 
 console.log(mostOccurredLetter ("hello"))
 
+const mostOccurredLetter2 = (str) => {
+  let counts = {};
+  for(let char of str){
+    counts[char] ? counts[char]++ :  counts[char] = 1;
+    
+  }
+  let maxChar;
+  let maxCharCount = 0;
+  for (let char in counts) {
+    if(counts[char] > maxCharCount){
+      maxChar = char;
+      maxCharCount = counts[char];
+    }
+  }
+  return maxChar
+}
+console.log(mostOccurredLetter2 ("hello"))
+
+// to improve our code we can put our code in two function => helper function and the main function
+//helper function
+
+const countOccurrences = (str) => {
+  str = str.toLowerCase ();
+  let counts = {};
+  
+  for (let char of str) {
+    counts[char] ? counts[char]++ :  counts[char] =  1
+  }
+  return counts
+}
+
+const mostOccurredLetter3 = (str) => {
+  let counts = countOccurrences(str);
+  let maxChar;
+  let maxCharCount = 0;
+  for (let key in counts ) {
+    if(counts[key] > maxCharCount){
+      maxChar = key;
+      maxCharCount = counts[key]
+    }
+  }
+  return maxChar;
+}
+console.log(mostOccurredLetter3("hello"))
+
+
+
 console.log("============================================")
 console.log("Linked List")
 //initialize the object node
