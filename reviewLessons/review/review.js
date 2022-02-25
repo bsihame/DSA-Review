@@ -1,3 +1,33 @@
+//Write a function the returns the  letter that appears the most amount of times in the string
+console.log("The Most Common Letter In The String")
+
+const mostOccurredLetter = (str) => {
+  let counts = {};
+  // since we don't need index we can use for let of loop
+  for(let char of str){
+    if(counts[char]) {
+      counts[char]++
+    } else {
+      counts[char] = 1;
+    }
+  }
+  //===> the value of count = { h: 1, e: 1, l: 2, o: 1 }
+  // Now to find the most Common letter we should loop in the object to find who gets the most value
+  let maxChar;
+  let maxCharCount = 0;
+  //for let in is the only way to loop in the object
+  for (let char in counts) {
+    if(counts[char] > maxCharCount){
+      maxChar = char;
+      maxCharCount = counts[char];
+    }
+  }
+  return maxChar
+}
+
+console.log(mostOccurredLetter ("hello"))
+
+console.log("============================================")
 console.log("Linked List")
 //initialize the object node
 class Node {
