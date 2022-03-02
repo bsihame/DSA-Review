@@ -442,6 +442,51 @@ const swapcase1 = (str) => {
 
 console.log(swapcase1('AaBbc'));
 
+// 11. Write a JavaScript function to convert a string into camel case.Go to the editor
+// Test Data :
+// console.log(camelize("JavaScript Exercises"));
+// console.log(camelize("JavaScript exercises"));
+// console.log(camelize("JavaScriptExercises"));
+// "JavaScriptExercises"
+// "JavaScriptExercises"
+// "JavaScriptExercises"
+
+const camelize = str => {
+  let arr = str.split(" ");
+    return arr.map(function (words) {
+        return words.charAt(0).toUpperCase() + words.substring(1);
+    }).join("");
+}
+console.log(camelize("JavaScript Exercises"));
+console.log(camelize("JavaScript exercises"));
+console.log(camelize("JavaScriptExercises"));
+
+
+// 12. Write a JavaScript function to uncamelize a string. Go to the editor
+// Test Data :
+// console.log(uncamelize('helloWorld'));
+// console.log(uncamelize('helloWorld','-'));
+// console.log(uncamelize('helloWorld','_'));
+// "hello world"
+// "hello-world"
+// "hello_world"
+
+const uncamelize = (str, arg) => {
+  let newStr = "";
+  for(let i = 0;  i < str.length; i++) {
+
+      if(str[i] === str[i].toUpperCase()) {    
+        newStr += arg +  str[i].toLowerCase()
+      } else {
+        newStr +=  str[i]
+      } 
+    }
+  return newStr
+}
+console.log(uncamelize('helloWorld', ));
+console.log(uncamelize('helloWorld','-'));
+console.log(uncamelize('helloWorld','_'));
+
 
 
 //=====================================================================================
