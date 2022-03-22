@@ -147,3 +147,22 @@ const flattenIterativeRecursive = (arr) => {
 }
 console.log(flattenIterativeRecursive([1, [2,[3]], [4]]))
 //============================================================================
+console.log("Power recursive")
+/*
+Write a function called power which accepts base and exponent. The function should return the power of the base to the exponent. 
+This function mimic the functionality of Math.pow( ).
+do not worry about negative bases and exponents.
+power(2, 0)// 1==> 2*power(2, 1) 2 2^1 // 2* 2
+                         2*power(2, 0) // ==>2*  2^0 = 1==> 2
+power(2, 2)// 4==>  2* 2*1
+power(2, 4)// 16==> 2 * 4* 3*2*1*0 
+ */
+
+const power = (base, exponent) => {
+ if (exponent === 0) return 1 
+  return base * power(base, exponent-1); 
+}
+console.log(power(2, 0));// 1
+console.log(power(2, 2))// 4
+console.log(power(2, 4))// 16 
+
