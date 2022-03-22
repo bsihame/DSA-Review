@@ -1,60 +1,149 @@
-console.log("COUNT DOWN");
+// console.log("COUNT DOWN");
 
-const countDownToZero = (num) => {
-  if (num <= 0) return;
-  console.log(num);
-  countDownToZero(num - 1);
-};
-console.log(countDownToZero(9));
-console.log("==========================================================");
-console.log("COUNT UP TO TEN")
+// const countDownToZero = (num) => {
+//   if (num <= 0) return;
+//   console.log(num);
+//   countDownToZero(num - 1);
+// };
+// console.log(countDownToZero(9));
+// console.log("==========================================================");
+// console.log("COUNT UP TO TEN")
 
-const countTen = (num = 1) => {
-  if (num > 10) return;
-  console.log(num);
-  num++;
-  countTen(num)
+// const countTen = (num = 1) => {
+//   if (num > 10) return;
+//   console.log(num);
+//   num++;
+//   countTen(num)
+// }
+// console.log(countTen())
+
+// console.log("==========================================================");
+
+// console.log("COUNT UP");
+
+// const countUp = (start, to) => {
+//   if (to < start) return;
+//   console.log(start);
+//   countUp(start + 1, to);
+// };
+// console.log(countUp(4, 19));
+// console.log("==========================================================");
+
+// console.log("Factorial");
+
+// const factorial = (n) => {
+//   if (n < 1) return -1;
+//   if (n === 0 || n === 1) return 1;
+//   return n * factorial(n - 1);
+// };
+// console.log(factorial(5));
+
+// console.log("==========================================================");
+// console.log("Fibonacci");
+
+// const fibonacci = (n) => {
+//   let arr = [];
+//   if (n < 2) {
+//     return n;
+//   }
+//   return fibonacci(n - 2) + fibonacci(n - 1);
+// };
+// console.log(fibonacci(7));
+
+// const fib = (n) => {
+//   let arr = [0, 1];
+//   for (let i = 2; i < n + 1; i++) {
+//     arr.push(arr[i - 2] + arr[i - 1]);
+//   }
+//   return arr[n];
+// };
+// console.log(fib(7));
+//=====================================================
+var addUntilTen = function(num) {
+
+  if (num >= 10) {
+    // base case
+    // console.log('done!');
+  } else {
+    // recursive case
+    // console.log(`num is ${num} keep going!`);
+    addUntilTen(num + 1);
+    
+    console.log(num);
+  }
+
 }
-console.log(countTen())
 
-console.log("==========================================================");
+// addUntilTen(4);
 
-console.log("COUNT UP");
+// const countTen = (num = 4) => {
+//     if (num >= 10) return;
+//     console.log(num);
+//     num++;
+//     countTen(num)
+//   }
+//   console.log(countTen())
 
-const countUp = (start, to) => {
-  if (to < start) return;
-  console.log(start);
-  countUp(start + 1, to);
-};
-console.log(countUp(4, 19));
-console.log("==========================================================");
-
-console.log("Factorial");
-
-const factorial = (n) => {
-  if (n < 1) return -1;
-  if (n === 0 || n === 1) return 1;
-  return n * factorial(n - 1);
-};
-console.log(factorial(5));
-
-console.log("==========================================================");
-console.log("Fibonacci");
-
-const fibonacci = (n) => {
-  let arr = [];
-  if (n < 2) {
-    return n;
+  const countTen2 = (num) => {
+    if (num >= 10) {
+      return;
+    }else {
+      countTen2(num+1)
+      console.log(num)
+    }
   }
-  return fibonacci(n - 2) + fibonacci(n - 1);
-};
-console.log(fibonacci(7));
+  // console.log(countTen2(4))
+//=========================================
+const flattenIterative = (arr) => {
+  //[1, [2,[3]], [4]]
+  // 0,    1   ,  2;
+  // value = 1
 
-const fib = (n) => {
-  let arr = [0, 1];
-  for (let i = 2; i < n + 1; i++) {
-    arr.push(arr[i - 2] + arr[i - 1]);
+  //[[2,[3]], [4]]
+  //    0,    1   ;
+  // [2,[3]]==> yes
+  // [[3], [4]]
+  // value = 2
+  // [[3], [4]]
+  // value = [3] => yes
+  // [3, [4]]
+  // 3==> push
+  //[[4]]
+  //value =[4];
+  // [4]
+  //value =4
+  // No
+  //push(4)
+  // [] no
+ //hit the base case
+ //return  // output = [1, 2, 3, 4]
+
+
+  let output = [];
+  // output = [1, 2, 3, 4]
+  while(arr.length){
+    let value = arr.shift();
+    console.log("value 101:", value)
+    if(Array.isArray(value)) {
+      arr = value.concat(arr);
+      console.log("arr 102: ", arr )
+    } else {
+      output.push(value)
+      console.log("output 107: ", output)
+    }
   }
-  return arr[n];
-};
-console.log(fib(7));
+  return output
+}
+
+// console.log(flattenIterative([1, [2,[3]], [4]]))
+
+const flattenIterativeRecursive = (arr) => {
+ if(!Array.isArray(arr)) return [arr];
+ let output = [];
+ for(let i = 0; i < arr.length; i++){
+   output = output.concat(flattenIterativeRecursive(arr[i]))
+ }
+ return output
+}
+console.log(flattenIterativeRecursive([1, [2,[3]], [4]]))
+//============================================================================
