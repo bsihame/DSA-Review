@@ -172,7 +172,25 @@ const factorialRecursive = (num) => {// 8 * 7* 6 * 5* 4* 3* 2* 1 * 0
 
 }
 
-console.log(factorialRecursive(1)) // 1
-console.log(factorialRecursive(2)) // 2
-console.log(factorialRecursive(4)) // 24
-console.log(factorialRecursive(7)) // 5040
+// console.log(factorialRecursive(1)) // 1
+// console.log(factorialRecursive(2)) // 2
+// console.log(factorialRecursive(4)) // 24
+// console.log(factorialRecursive(7)) // 5040
+
+// function productOfArray ( arr ) {
+//   let newArr = arr
+//   if(newArr.length === 0) return  1;
+//   console.log(1, arr)
+//   return newArr.pop() * productOfArray(arr);
+// }
+function productOfArray2(arr) {
+  if(arr.length === 0) {
+      return 1;
+  }
+  console.log(2, arr)
+  return arr[0] * productOfArray2(arr.slice(1));
+}
+// console.log(productOfArray([1,2,3])) // 6
+// console.log(productOfArray([1,2,3,10])) // 60
+console.log(productOfArray2([1,2,3])) // 6
+console.log(productOfArray2([1,2,3,10])) // 60
