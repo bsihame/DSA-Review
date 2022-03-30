@@ -154,15 +154,39 @@ class SingleLinkedList {
     }
     this.tail = newTail;
     this.tail.next = null;
-    this.length--
+    this.length--;
+    if(this.length === 0) {
+      this.head = null;
+      this.tail = null
+    }
     return current
   }
+
+  shift() {
+    if(!this.head) return undefined;
+    // if(this.length === 0)  this.tail = null
+    
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--; 
+    if(this.length === 0){
+      this.tail = null
+    }
+    return currentHead;
+  }
+
 
 }
 let list = new SingleLinkedList();
 list.push("hello");
 list.push("today");
 list.push(100)
+list.push(200)
 list.pop()
+list.shift()
+list.shift()
+list.shift()
+
+
 console.log(list)
 
